@@ -2,7 +2,8 @@ import uuid
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-
+from firebase_admin import initialize_app, db
+from firebase_functions import https_fn
 
 BOOKS = [
     {
@@ -82,6 +83,10 @@ def single_book(book_id):
         response_object['message'] = 'Book removed!'
     return jsonify(response_object)
 
+@https_fn.on_request()
+def httpsflaskexample(req: https_fn.Request) -> https_fn.Response:
+    with app.request_context(req.environ):
+        return app.full_dispatch_request()
 
 if __name__ == '__main__':
     app.run()
