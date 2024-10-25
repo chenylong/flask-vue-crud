@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-gray-100 flex flex-col">
+  <div class="min-h-screen bg-blue-900 text-gray-100 flex flex-col">
     <!-- 顶部标题栏 -->
     <header class="bg-gray-800 px-4 py-3 flex items-center justify-between mb-4">
       <div class="flex items-center">

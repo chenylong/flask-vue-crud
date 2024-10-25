@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "build": "^0.1.4",
+    "marked": "^14.1.3"
+  }
+}

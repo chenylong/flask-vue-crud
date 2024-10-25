@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-gray-100 p-4">
         <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
-            <h1 class="text-2xl font-bold text-center p-4 bg-gray-200"><strong>现场检查（勘验）记录表</strong></h1>
+            <h1 class="text-2xl font-bold text-center p-4 bg-blue-200">现场检查（勘验）记录表</h1>
             <table class="w-full border-collapse">
                 <tr>
                     <th class="border border-gray-300 px-4 py-2 text-left" colspan="2">勘验时间：{{ checkTime }}</th>

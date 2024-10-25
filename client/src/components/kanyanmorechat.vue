@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-gray-100 flex flex-col">
+  <div class="min-h-screen bg-gray-100 text-gray-100 flex flex-col">
     <!-- 顶部标题栏 -->
-    <header class="bg-gray-800 px-4 py-3 flex items-center justify-between mb-4">
+    <header class="bg-gray-300 px-4 py-3 flex items-center justify-between mb-4">
       <div class="flex items-center">
         <ArrowLeft class="w-6 h-6 text-gray-400" />
-        <h1 class="text-xl font-bold text-blue-400 ml-3">勘验bot</h1>
+        <h1 class="text-xl font-bold text-blue-500 ml-3">勘验bot</h1>
       </div>
       <div class="flex items-center space-x-4">
         <Home class="w-5 h-5 text-gray-400" />
@@ -26,7 +26,7 @@
           <!-- 头像 -->
           <div 
             class="w-8 h-8 rounded-full flex items-center justify-center text-sm"
-            :class="msg.type === 'user' ? 'bg-blue-500' : 'bg-gray-700'"
+            :class="msg.type === 'user' ? 'bg-blue-500' : 'bg-gray-400'"
           >
             {{ msg.type === 'user' ? '👤' : '🤖' }}
           </div>
@@ -34,19 +34,19 @@
           <!-- 消息内容 -->
           <div 
             class="max-w-[75%] rounded-lg px-4 py-2 text-sm"
-            :class="msg.type === 'user' ? 'bg-blue-600' : 'bg-gray-800 border border-gray-700'"
+            :class="msg.type === 'user' ? 'bg-blue-600' : 'bg-gray-800 border border-gray-300'"
           >
             <p>{{ msg.content }}</p>
-            <span class="text-xs text-gray-400 mt-1 block">
+            <span class="text-xs text-blue-400 mt-1 block">
               {{ msg.time }}
             </span>
           </div>
         </div>
         <div v-if="isLoading" class="flex items-center space-x-2">
-          <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+          <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
             🤖
           </div>
-          <div class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+          <div class="bg-gray-400 border border-gray-300 rounded-lg px-4 py-2">
             <div class="flex space-x-1">
               <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
               <div class="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
@@ -58,9 +58,9 @@
     </div>
     
     <!-- 输入区域 -->
-    <div class="mt-4 bg-gray-800 p-4 rounded-lg shadow-md">
+    <div class="mt-4 bg-gray-400 p-4 rounded-lg shadow-md">
       <div class="flex items-center space-x-2">
-        <button class="text-gray-400">
+        <button class="text-blue-800">
           <Upload class="w-6 h-6" />
         </button>
         <input 
@@ -72,7 +72,7 @@
         >
         <button 
           v-if="!userInput.trim()"
-          class="text-gray-400"
+          class="text-blue-800"
         >
           <Phone class="w-6 h-6" />
         </button>
@@ -238,7 +238,6 @@ const  caseinfostr = `
 
 onMounted(() => {
   addBotMessage("hi，我是您的现场勘验助手，让我们开始吧！首先您需要确认以下案件基本信息是否正确。")
-  addBotMessage("/n")
   addBotMessage(caseinfostr)
 })
 </script>
